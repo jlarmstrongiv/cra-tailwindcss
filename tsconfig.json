@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // absolute file paths
+    // https://create-react-app.dev/docs/importing-a-component/#absolute-imports
+    "baseUrl": "src",
+    // default tsconfig.json
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": ["src"]
+}

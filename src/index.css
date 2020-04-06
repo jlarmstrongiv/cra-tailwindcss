@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* https://tailwindcss.com/docs/using-with-preprocessors */
+/* https://tailwindcss.com/docs/controlling-file-size/#setting-up-purgecss */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* https://tailwindcss.com/docs/controlling-file-size */
+/* https://github.com/tailwindcss/docs/issues/168#issuecomment-577602063 */
+/*! purgecss start ignore */
+@import 'tailwindcss/base';
+@import './styles/base.css';
+
+/* preflight https://tailwindcss.com/docs/preflight/ */
+
+@import 'tailwindcss/components';
+@import './styles/components.css';
+/*! purgecss end ignore */
+
+@import 'tailwindcss/utilities';
+@import './styles/utilities.css';
