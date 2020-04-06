@@ -1,3 +1,0 @@
-- See whether you also need to purgecss ignore custom utils or not
-- Do you support sass?
-- Publish to github

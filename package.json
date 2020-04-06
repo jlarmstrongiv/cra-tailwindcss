@@ -8,6 +8,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "prestart": "postcss tailwind/index.css -o src/index.css --env development",
     "start": "npm-run-all --parallel start:css start:js",
     "start:css": "postcss tailwind/index.css -o src/index.css --env development -w",
     "start:js": "react-scripts start",

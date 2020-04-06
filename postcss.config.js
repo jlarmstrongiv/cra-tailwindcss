@@ -1,14 +1,7 @@
-const tailwindcss = require('tailwindcss');
-const cssnano = require('cssnano');
-const purgecss = require('@fullhuman/postcss-purgecss');
-
-// REFACTOR
-// MOVE STYLES OUTSIDE SRC to prevent double reloading?
-
 module.exports = {
   plugins: [
     require('postcss-import'),
-    tailwindcss('./tailwind.js'),
+    require('tailwindcss')('./tailwind.js'),
     // https://tailwindcss.com/docs/using-with-preprocessors#future-css-features
     require('postcss-preset-env')({
       stage: 1,
@@ -17,10 +10,10 @@ module.exports = {
 
     // https://flaviocopes.com/tailwind-setup/
     process.env.NODE_ENV === 'production'
-      ? cssnano({ preset: 'default' })
+      ? require('cssnano')({ preset: 'default' })
       : null,
     process.env.NODE_ENV === 'production'
-      ? purgecss({
+      ? require('purgecss')({
           // Specify the paths to all of the template files in your project
           content: [
             './src/**/*.js',
