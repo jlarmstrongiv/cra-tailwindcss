@@ -3,24 +3,19 @@ const cssnano = require('cssnano');
 const purgecss = require('@fullhuman/postcss-purgecss');
 
 // REFACTOR
-// https://tailwindcss.com/docs/using-with-preprocessors#future-css-features
-// const postcssPresetEnv = require('postcss-preset-env');
 // MOVE STYLES OUTSIDE SRC to prevent double reloading?
 
 module.exports = {
   plugins: [
     require('postcss-import'),
     tailwindcss('./tailwind.js'),
-    require('postcss-nested'),
+    // https://tailwindcss.com/docs/using-with-preprocessors#future-css-features
+    require('postcss-preset-env')({
+      stage: 1,
+      autoprefixer: process.env.NODE_ENV === 'production',
+    }),
 
-    // https://tailwindcss.com/docs/using-with-preprocessors#variables
-    process.env.NODE_ENV === 'production'
-      ? require('postcss-custom-properties')
-      : null,
     // https://flaviocopes.com/tailwind-setup/
-    process.env.NODE_ENV === 'production'
-      ? require('autoprefixer')
-      : null,
     process.env.NODE_ENV === 'production'
       ? cssnano({ preset: 'default' })
       : null,

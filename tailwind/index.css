@@ -5,13 +5,13 @@
 /* https://github.com/tailwindcss/docs/issues/168#issuecomment-577602063 */
 /*! purgecss start ignore */
 @import 'tailwindcss/base';
-@import './styles/base.css';
+@import './base/index.css';
 
 /* preflight https://tailwindcss.com/docs/preflight/ */
 
 @import 'tailwindcss/components';
-@import './styles/components.css';
+@import './components/index.css';
 /*! purgecss end ignore */
 
 @import 'tailwindcss/utilities';
-@import './styles/utilities.css';
+@import './utilities/index.css';
